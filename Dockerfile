@@ -13,4 +13,4 @@ RUN pip install \
   PyNacl \
   discord.py[voice]
 
-RUN ["python3", "/discbot/bot.py"]
+RUN ["bash"]
