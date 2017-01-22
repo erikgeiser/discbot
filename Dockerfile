@@ -1,4 +1,4 @@
-from debian:jessie
+from debian:stretch
 
 RUN apt-get update
 RUN apt-get install -y \
@@ -7,7 +7,8 @@ RUN apt-get install -y \
   python3-pip \
   libopus0 \
   libffi-dev
-RUN pip install \
+RUN apt-get clean
+RUN pip3 install \
   aiohttp \
   websockets \
   PyNacl \
