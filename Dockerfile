@@ -6,12 +6,14 @@ RUN apt-get install -y \
   python3-dev \
   python3-pip \
   libopus0 \
-  libffi-dev
+  libffi-dev \
+  ffmpeg
 RUN apt-get clean
 RUN pip3 install \
   aiohttp \
   websockets \
   PyNacl \
+  youtube_dl \
   discord.py[voice]
 
 RUN ["bash"]

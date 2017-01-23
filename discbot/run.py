@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from bot import CommandBot
+from bot import Discbot
 from config import conf
 import asyncio
 
@@ -13,10 +13,13 @@ if not discord.opus.is_loaded():
 
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'),
                    description='Provider of face melting mixtapes')
-bot.add_cog(CommandBot(bot))
+discbot = Discbot(bot)
+bot.add_cog(discbot)
 
 @bot.event
 async def on_ready():
-    print('Logged in')
+    print("Connected")
+    await discbot.start()
+
 
 bot.run(conf.token)
