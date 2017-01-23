@@ -60,3 +60,7 @@ ENV/
 
 # config
 config/config.ini
+
+# music
+*.mp3
+*.yt
